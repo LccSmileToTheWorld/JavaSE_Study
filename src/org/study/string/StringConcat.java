@@ -23,14 +23,14 @@ public class StringConcat {
         String f = "abv" + a2;
         String intern = f.intern();
         //a在常量池中，b是new出来的，在堆中，所以==判断为false
-        System.out.println(a == b);
+        System.out.println(a == b);//false
         //字面量+字面量，结果在常量池中
-        System.out.println(a == c);
+        System.out.println(a == c);//true
         //变量参与+运算时，结果在堆中
-        System.out.println(a == d);
-        System.out.println(a == e);
-        System.out.println(a == f);
+        System.out.println(a == d);//false
+        System.out.println(a == e);//false
+        System.out.println(a == f);//false
         //堆中String可以通过调用intern(),将堆中字符串复制到常量池中
-        System.out.println(a == intern);
+        System.out.println(a == intern);//true
     }
 }

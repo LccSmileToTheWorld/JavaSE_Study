@@ -44,6 +44,9 @@ public class StringMethod {
 
         //contains(CharSequence s)：当且仅当此字符串包含指定的 char 值序列时，返回 true
         System.out.println(a.contains("上"));
+
+        //匹配:
+        //boolean matches(String regex)：告知此字符串是否匹配给定的正则表达式。
     }
 
 
@@ -153,11 +156,12 @@ public class StringMethod {
         System.out.println(b);
 
         /**
-         * compareTo(String)：比较两个字符串大小，返回两者的ASCII码值差，调用者-参数，可以为负数
-         * 如果两个字符串的长度不同，并且前面N个字符都相等，则返回两个字符串长度之差
+         * 比较两个字符串大小，返回两者第一个不同字符（同下角标对比）的ASCII码值差，调用者-参数，可以为负数。
+         * 如果两个字符串的长度不同，并且前面N（较短字符串的长度）个字符都相等，则返回两个字符串长度之差。
          */
-        int c = b.compareTo(a);
-        System.out.println(c);
+        String c = "aeef";
+        int d = c.compareTo(a);
+        System.out.println(d);
     }
 
 
@@ -178,14 +182,14 @@ public class StringMethod {
     }
 
     /**
-     *<p> 去掉首尾字符.
+     *<p> 去掉首尾空格.
      *
      * @param
      */
     @Test
     public void test7() {
         String a = "  dsfsf  ";
-        //trim()：去掉首尾字符
+        //trim()：去掉首尾空格
         String b = a.trim();
         System.out.println(b);
     }
@@ -193,17 +197,17 @@ public class StringMethod {
     @Test
     public void test8() {
         String a = "sklajflajf";
-        //indexOf(String)：返回指定子字符串在此字符串中第一次出现处的索引，没有返回-1
+        //indexOf(String)：返回子串在父串中第一次出现处的索引，没有返回-1
         System.out.println(a.indexOf("k"));
 
-        //indexOf(String, int)：返回指定子字符串在此字符串中第一次出现处的索引，从指定的索引开始
+        //indexOf(String, int)：从指定的索引开始查找，返回子串在父串中第一次出现处的索引，没有返回-1。（索引是从0开始的，不是从参数fromIndex开始的）
         System.out.println(a.indexOf("la", 4));
 
-        //lastIndexOf(String str)：返回指定子字符串在此字符串中最右边出现处的索引
+        //lastIndexOf(String str)：返回指定子串在父串中最右边出现处的索引，没有返回-1
         System.out.println(a.lastIndexOf("f"));
 
-        //lastIndexOf(String str, int fromIndex)：返回指定子字符串在此字符串中最后一次出现处的索引，从指定的索引开始反向搜索
-        System.out.println(a.lastIndexOf("a", 8));
+        //lastIndexOf(String str, int fromIndex)：从指定的索引开始查找，返回指定子串在父串中最右边出现处的索引，没有返回-1
+        System.out.println(a.lastIndexOf("j", 8));
     }
 
 
@@ -220,8 +224,6 @@ public class StringMethod {
         System.out.println(b);
         //String replaceAll(String regex, String replacement)：使用给定的 replacement 替换此字符串所有匹配给定的正则表达式的子字符串。
         //String replaceFirst(String regex, String replacement)：使用给定的 replacement 替换此字符串匹配给定的正则表达式的第一个子字符串。
-        //匹配:
-        //boolean matches(String regex)：告知此字符串是否匹配给定的正则表达式。
         //切片：
         //String[] split(String regex)：根据给定正则表达式的匹配拆分此字符串。
         //String[] split(String regex, int limit)：根据匹配给定的正则表达式来拆分此字符串，最多不超过limit个，如果超过了，剩下的全部都放到最后一个元素中。
