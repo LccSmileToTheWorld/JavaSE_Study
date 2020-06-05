@@ -32,5 +32,11 @@ public class EnumTest {
                 System.out.println(season.getKey() + "-对应：" + season.getValue());
                 break;
         }
+
+        EnumUtil.season spring = EnumUtil.season.spring;
+        System.out.println(spring);
+        // 使用enum编写枚举类，默认继承java.lang.Enum
+        System.out.println(spring.getClass().getSuperclass());
+
     }
 }
